@@ -28,9 +28,25 @@ $ rails server
 - `rails c`
 
 #### Story: As the consumer of the API I can see all the animals in the database.
+- Added index method to controller
+- Verified in postman
 
 - Add some animals to the database:
   - `Animal.create common_name: 'Bald Eagle', latin_name: 'Haliaeetus leucocephalus', kingdom: 'bird'`
   - `Animal.create common_name: 'Common Yellowthroat', latin_name: 'Geothlypis trichas', kingdom: 'bird'`
   - `Animal.create common_name: 'Red Spotted Garter Snake', latin_name: 'Thamnophis sirtalis sirtalis', kingdom: 'snake'`
   - `Animal.create common_name: 'Pileated Woodpecker', latin_name: 'Dryocopus pileatus', kingdom: 'bird'`
+
+  #### Story: As the consumer of the API I can update an animal in the database.
+  - Added ` skip_before_action :verify_authenticity_token` to /app/controllers/application_controller.rb
+    - Added Update method to controller
+    - Verified in postman
+
+  #### Story: As the consumer of the API I can destroy an animal in the database.
+  - Added destroy method to controller
+    - Verified in postman
+
+#### Story: As the consumer of the API I can create a new animal in the database.
+- Added create method to controller
+    - verified in postman
+
