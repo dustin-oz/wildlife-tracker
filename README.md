@@ -21,15 +21,13 @@ $ rails server
 
 #### Story: As a developer I can create an animal model in the database. An animal has the following information: common name, latin name, kingdom (mammal, insect, etc.).
 
-
-#### Story: As the consumer of the API I can see all the animals in the database.
-Hint: Make a few animals using Rails Console
-
 - Terminal `$ rails generate resource Animal common_name:string latin_name:string kingdom:string`
 - Remove the views: `$ rm -rf app/views/animals`
 - Remove the stylesheet: `$ rm app/assets/stylesheets/animals.scss`
 - `rails db:migrate`
 - `rails c`
+
+#### Story: As the consumer of the API I can see all the animals in the database.
 
 - Add some animals to the database:
   - `Animal.create common_name: 'Bald Eagle', latin_name: 'Haliaeetus leucocephalus', kingdom: 'bird'`
