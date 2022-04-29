@@ -50,3 +50,6 @@ $ rails server
 - Added create method to controller
     - verified in postman
 
+#### Story: As the consumer of the API I can create a sighting of an animal with date (use the datetime datatype), a latitude, and a longitude.
+Hint: An animal has_many sightings. (rails g resource Sighting animal_id:integer ...)
+Hint: Datetime is written in Rails as “year-month-day hr:min:sec" (“2022-01-28 05:40:30")
