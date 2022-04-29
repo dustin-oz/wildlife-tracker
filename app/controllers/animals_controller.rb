@@ -4,6 +4,11 @@ class AnimalsController < ApplicationController
         render json: animals
     end
 
+    def show
+        animal = Animal.find(params[:id])
+        render json: animal incude: :sightings
+    end
+
     def create
         animal = Animal.create(animal_params)
         if animal.valid?
@@ -31,6 +36,8 @@ class AnimalsController < ApplicationController
             render json: animal.errors
         end
     end
+
+   
 
     private
     def animal_params

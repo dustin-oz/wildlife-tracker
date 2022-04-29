@@ -53,3 +53,23 @@ $ rails server
 #### Story: As the consumer of the API I can create a sighting of an animal with date (use the datetime datatype), a latitude, and a longitude.
 Hint: An animal has_many sightings. (rails g resource Sighting animal_id:integer ...)
 Hint: Datetime is written in Rails as “year-month-day hr:min:sec" (“2022-01-28 05:40:30")
+- Created a new resource of Sighting to track them in the db
+- `rails generate resource Sighting date:datetime latitude:integer longitude:integer animal_id:integer`
+- `rm -rf app/views/sightings`
+- `rails db:migrate` 
+- In app/models/animal.rb => `has_many :sightings`
+- In app/models/sighting.rb => `belongs_to :animal`
+- Created index method in sightings controller
+
+#### Story: As the consumer of the API I can update an animal sighting in the database.
+- `animal = Animal.where(common_name: 'Bald Eagle').first`
+- `animal.sightings.create date: Date.today.to_s, longitude: 31, latitude: 19`
+- Created update method in sighting controller
+- Verified in postman
+
+#### Story: As the consumer of the API I can destroy an animal sighting in the database.
+- Created destroy method in the sightings controller
+- Verified in postman
+
+#### Story: As the consumer of the API, when I view a specific animal, I can also see a list sightings of that animal.
+Hint: Checkout the Ruby on Rails API docs on how to include associations.
